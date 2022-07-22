@@ -1,5 +1,6 @@
 import { Box, Container, Stack, Button, IconButton, border, Heading,Text } from "@chakra-ui/react"
 import { EmailIcon, ArrowForwardIcon, SearchIcon } from "@chakra-ui/icons"
+
 function Aspire() {
     return (
         <>
@@ -9,8 +10,8 @@ function Aspire() {
                     <Button _hover={{color:"blue", border:"1px solid blue"}} padding="50px"  variant="outline"><IconButton aria-label='Search database' icon={<SearchIcon />} />
                         Search Your Dream Career
                     </Button>
-                    <Button rightIcon={<ArrowForwardIcon />} _hover={{color:"blue", border:"1px solid blue"}} padding="50px"   variant="outline">
-                        👤 Create Your Profile
+                    <Button rightIcon={<ArrowForwardIcon />} _hover={{color:"blue", border:"1px solid blue"}} padding="50px"   variant="outline">👤 Create Your Profile
+                        
                     </Button>
                 </Stack>
             </Container>

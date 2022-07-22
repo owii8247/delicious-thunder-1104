@@ -68,8 +68,8 @@ function Footer() {
 
                         </Box>
                         <Box>
-                            <Button borderRadius="100%" colorScheme="red" ref={btnRef}  onClick={onOpen}>
-                            <Image width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/724/724715.png" />
+                            <Button borderRadius="100%" colorScheme="red" ref={btnRef} onClick={onOpen}>
+                                <Image width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/724/724715.png" />
                             </Button>
                             <Drawer
                                 isOpen={isOpen}
@@ -79,7 +79,7 @@ function Footer() {
                             >
                                 <DrawerOverlay />
                                 <DrawerContent>
-                                
+
                                     <Button><Tooltip label="Close Conversation"><DrawerCloseButton /></Tooltip></Button>
                                     <DrawerHeader>Get Hired Faster with Shine!</DrawerHeader>
 
@@ -88,7 +88,7 @@ function Footer() {
                                     </DrawerBody>
 
                                     <DrawerFooter>
-                                    <Input placeholder='Type your message here...' />
+                                        <Input placeholder='Type your message here...' />
                                         <Button colorScheme='gray'>📎</Button>
                                     </DrawerFooter>
                                 </DrawerContent>

@@ -26,16 +26,18 @@ import {
 import { PhoneIcon, BellIcon, SearchIcon } from "@chakra-ui/icons"
 import Categories from "./Categories"
 import Early from "./Early"
-import { navigate, useNavigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
+import {NavLink } from "react-router-dom"
+import Register from "../Routes/Register"
+
 
 
 
 export function SearchSection() {
   const { isOpen, onOpen, onClose } = useDisclosure()
+
   const navigate = useNavigate()
-  function handleRegister () {
-    navigate("/register")
-  }
+ 
   return (
     <>
       <Container backgroundColor="lightgray" display="flex" justifyContent="end"
@@ -138,8 +140,9 @@ export function SearchSection() {
                   <Text padding="5px">New To Shine ?</Text>
 
                   <PopoverBody display="flex" gap="30px">
-                    <Button colorScheme="blue" onClick={handleRegister}>Register</Button>
-                    <Button color="blue" colorScheme="white">Log In</Button>
+                    <Button colorScheme="blue" ><NavLink  to="/register">Register</NavLink></Button>
+                    <Button color="blue" colorScheme="white"><NavLink to="/login">Log In</NavLink></Button>
+                    
                   </PopoverBody>
 
                 </PopoverContent>
