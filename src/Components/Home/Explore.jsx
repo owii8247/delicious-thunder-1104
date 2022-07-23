@@ -1,7 +1,18 @@
 import { Container, Heading, Button, Image, Box, Text, color } from "@chakra-ui/react"
 import { PhoneIcon } from "@chakra-ui/icons"
+import { NavLink, useNavigate } from "react-router-dom"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
+
+
+
+
 
 function Explore() {
+  
     return (
         <>
             <Container display="flex" justifyContent="center" gap="30px" backgroundColor="#f2f3f8" maxW="100%" padding="50px">
@@ -16,8 +27,21 @@ function Explore() {
             <br /><br />
             <Heading>Explore Our Premium Services</Heading>
             <br />
+            
             <Container display="flex" justifyContent="space-evenly" gap="50px" padding="10px" maxW='1080px'>
-                <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
+            <Swiper
+                    spaceBetween={40}
+                    slidesPerView={3}
+                    className="external-buttons"
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}>
+                    <SwiperSlide>
+            
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
                     <Image src="https://static1.shine.com/l/m/product_image/images_all/1640935815_1767.png" /><br />
                     <Text fontWeight="bold" fontSize="2xl" display="flex" justifyContent="start" >Application Highliter</Text>
 
@@ -30,7 +54,9 @@ function Explore() {
                         <Button colorScheme="blue" color="white" > <PhoneIcon />  Talk To Expert</Button>
                     </Box>
                 </Box>
-                <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
                     <Image src="https://static1.shine.com/l/m/product_image/images_all/1640925161_7427.png" /><br />
                     <Text fontWeight="bold" fontSize="2xl" display="flex" justifyContent="start" >Featured Profile : 90 Days</Text>
 
@@ -43,7 +69,9 @@ function Explore() {
                         <Button colorScheme="blue" color="white" > <PhoneIcon />  Talk To Expert</Button>
                     </Box>
                 </Box>
-                <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
                     <Image src="https://static1.shine.com/l/m/product_image/images_all/1640940094_8952.png" /><br />
                     <Text fontWeight="bold" fontSize="2xl" display="flex" justifyContent="start" >Application Booster</Text>
 
@@ -56,8 +84,16 @@ function Explore() {
                         <Button colorScheme="blue" color="white" > <PhoneIcon />  Talk To Expert</Button>
                     </Box>
                 </Box>
+                </SwiperSlide>
+                </Swiper>
+               
+               
+                
+                  
             </Container>
-            <Button colorScheme="white" color="blue" _hover={{ fontSize:"large" }}>View All</Button>
+            
+            
+            <Button colorScheme="white" color="blue" _hover={{ fontSize: "large" }}><NavLink to="/details">View All</NavLink></Button>
             <br /><br />
             <Heading>Popular Courses</Heading>
             <br />
@@ -71,13 +107,24 @@ function Explore() {
                 <Text _hover={{ textDecoration: "underline", color: "blue", fontWeight: "bold" }}>Management</Text>
 
             </Container>
-            
+
             <Container display="flex" justifyContent="center" gap="30px" maxW="100%" padding="50px">
-                <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
+            <Swiper
+                    spaceBetween={40}
+                    slidesPerView={3}
+                    className="external-buttons"
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}>
+                    <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
                     <Text display="flex" justifyContent="start">Course</Text>
                     <Box display="flex" justifyContent="space-around">
                         <Image width="55px" height="55px" borderRadius="100%" src="https://static1.shine.com/l/m/product_image/images_all/1640851375_8085.png" />
-                        <Text fontSize="2xl" fontWeight="bold" >Backend Developer In Java</Text>
+                        <Text fontSize="2xl" fontWeight="bold" >Backend Developer In Java Backend </Text>
                     </Box>
                     <Box display="flex" justifyContent="space-between">
                         <Text fontSize="md" fontWeight="bold">4.5</Text>
@@ -95,7 +142,9 @@ function Explore() {
                         <Button colorScheme="blue" color="white" >Buy Now</Button>
                     </Box>
                 </Box>
-                <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
                     <Text display="flex" justifyContent="start">Course</Text>
                     <Box display="flex" justifyContent="space-around">
                         <Image width="55px" height="55px" borderRadius="100%" src="https://static1.shine.com/l/m/product_image/images_all/1652954044_279.png" />
@@ -117,7 +166,9 @@ function Explore() {
                         <Button colorScheme="blue" color="white" >Buy Now</Button>
                     </Box>
                 </Box>
-                <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
                     <Text display="flex" justifyContent="start">Course</Text>
                     <Box display="flex" justifyContent="space-around">
                         <Image width="55px" height="55px" borderRadius="100%" src="https://static1.shine.com/l/m/product_image/images_all/1652953799_9984.png" />
@@ -139,58 +190,76 @@ function Explore() {
                         <Button colorScheme="blue" color="white" >Buy Now</Button>
                     </Box>
                 </Box>
+                </SwiperSlide>
+                </Swiper>
             </Container>
-            <Button colorScheme="white" color="blue" _hover={{ fontSize:"large" }}>View All</Button>
+            <Button colorScheme="white" color="blue" _hover={{ fontSize: "large" }}><NavLink to="/details">View All</NavLink></Button>
             <br /><br />
             <Heading backgroundColor="#f2f3f8" maxW="100%" padding="20px">Latest From Blog</Heading>
             <Container display="flex" justifyContent="center" gap="30px" backgroundColor="#f2f3f8" maxW="100%" padding="50px" cursor="pointer">
-            
-            
-            <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
-                <Image  src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fl%2Fm%2Fimages%2Fblog%2Fjobs.png&w=1920&q=75" />
-                <br />
-                <Text display="flex" justifyContent="start" fontSize="xl" fontWeight="bold">Mint + Shine Talent Insights</Text>
-                <br /><br />
-                <Box display="flex" justifyContent="space-between" fontSize="xs" _hover={{ fontSize:"sm" }}>
-                <Text>Shine Talent Insights</Text>
-                <Box display="flex" gap="20px" fontSize="xs" _hover={{ fontSize:"sm" }}>
-                <Box> 👁️ 13337670</Box>
-                <Box> ⤴ 105</Box>
+            <Swiper
+                    spaceBetween={40}
+                    slidesPerView={3}
+                    className="external-buttons"
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}>
+                    <SwiperSlide>
+
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
+                    <Image src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fl%2Fm%2Fimages%2Fblog%2Fjobs.png&w=1920&q=75" />
+                    <br />
+                    <Text display="flex" justifyContent="start" fontSize="xl" fontWeight="bold">Mint + Shine Talent Insights</Text>
+                    <br /><br />
+                    <Box display="flex" justifyContent="space-between" fontSize="xs" _hover={{ fontSize: "sm" }}>
+                        <Text>Shine Talent Insights</Text>
+                        <Box display="flex" gap="20px" fontSize="xs" _hover={{ fontSize: "sm" }}>
+                            <Box> 👁️ 13337670</Box>
+                            <Box> ⤴ 105</Box>
+                        </Box>
+                    </Box>
                 </Box>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
+                    <Image src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fl%2Fm%2Fimages%2Fblog%2Fwhite-collar-jobs.jpg&w=1920&q=75" />
+                    <br />
+                    <Text display="flex" justifyContent="start" fontSize="xl" fontWeight="bold">What are "White Collar" Jobs ?</Text>
+                    <br /><br />
+                    <Box display="flex" justifyContent="space-between" fontSize="xs" _hover={{ fontSize: "sm" }}>
+                        <Text>Career Help</Text>
+                        <Box display="flex" gap="20px" fontSize="xs" _hover={{ fontSize: "sm" }}>
+                            <Box> 👁️ 235733</Box>
+                            <Box> ⤴ 35</Box>
+                        </Box>
+                    </Box>
                 </Box>
-            </Box>
-            <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
-                <Image src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fl%2Fm%2Fimages%2Fblog%2Fwhite-collar-jobs.jpg&w=1920&q=75" />
-                <br />
-                <Text display="flex" justifyContent="start" fontSize="xl" fontWeight="bold">What are "White Collar" Jobs ?</Text>
-                <br /><br />
-                <Box display="flex" justifyContent="space-between" fontSize="xs" _hover={{ fontSize:"sm" }}>
-                <Text>Career Help</Text>
-                <Box display="flex" gap="20px" fontSize="xs" _hover={{ fontSize:"sm" }}>
-                <Box> 👁️ 235733</Box>
-                <Box> ⤴ 35</Box>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="10px" width="100%" _hover={{ border: "0.1px solid darkgray" }}>
+                    <Image src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fl%2Fm%2Fimages%2Fblog%2Fonline-form-filling-jobs.png&w=1920&q=75" />
+                    <br />
+                    <Text display="flex" justifyContent="start" fontSize="xl" fontWeight="bold">Online Form Filling Jobs</Text>
+                    <br /><br />
+                    <Box display="flex" justifyContent="space-between" fontSize="xs" _hover={{ fontSize: "sm" }}>
+                        <Text>Career Help Jobs</Text>
+                        <Box display="flex" gap="20px" fontSize="xs" _hover={{ fontSize: "sm" }}>
+                            <Box> 👁️ 544</Box>
+                            <Box> ⤴ 95</Box>
+                        </Box>
+                    </Box>
                 </Box>
-                </Box>
-            </Box>
-            <Box border="0.1px solid lightgray" padding="10px" width="30%" _hover={{ border: "0.1px solid darkgray" }}>
-                <Image src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fl%2Fm%2Fimages%2Fblog%2Fonline-form-filling-jobs.png&w=1920&q=75" />
-                <br />
-                <Text display="flex" justifyContent="start" fontSize="xl" fontWeight="bold">Online Form Filling Jobs</Text>
-                <br /><br />
-                <Box display="flex" justifyContent="space-between" fontSize="xs" _hover={{ fontSize:"sm" }}>
-                <Text>Career Help Jobs</Text>
-                <Box display="flex" gap="20px" fontSize="xs" _hover={{ fontSize:"sm" }}>
-                <Box> 👁️ 544</Box>
-                <Box> ⤴ 95</Box>
-                </Box>
-                </Box>
-            </Box>
+                </SwiperSlide>
+                </Swiper>
             </Container>
-            <Button colorScheme="white" color="blue"  _hover={{ fontSize:"large" }}>View All</Button>
+            <Button colorScheme="white" color="blue" _hover={{ fontSize: "large" }}><NavLink to="/details">View All</NavLink></Button>
             <br /><br />
-            
-            
-            
+
+
+
 
         </>
     )
