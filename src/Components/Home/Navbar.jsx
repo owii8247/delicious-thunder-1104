@@ -28,7 +28,13 @@ import Categories from "./Categories"
 import Early from "./Early"
 import { Navigate, useNavigate } from "react-router-dom"
 import {NavLink } from "react-router-dom"
-import Register from "../Routes/Register"
+import React, { Component } from 'react';
+
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
 
 
 
@@ -75,11 +81,11 @@ export function SearchSection() {
 
       <Container display="flex" justifyContent="space-between" maxW='1080px'>
         <Box display="flex" gap="30px">
-          <a href="#"><Image width="74px" height="40px" src="https://www.shine.com/next/static/images/shine-logo.png" /></a>
+        <Button colorScheme="white"><NavLink to="/"><Image width="74px" height="40px" src="https://www.shine.com/next/static/images/shine-logo.png" /></NavLink></Button>
           <Box>
             <Box display="flex" width="150%">
               <Input onClick={onOpen} placeholder="Job,Title,Skills" />
-              <Button colorScheme="blue"><SearchIcon /></Button>
+              <Button colorScheme="blue"><NavLink to="/details"><SearchIcon /></NavLink></Button>
             </Box>
 
 
@@ -89,7 +95,7 @@ export function SearchSection() {
                 <ModalHeader></ModalHeader>
                 <ModalCloseButton />
                 <ModalBody display="flex" justifyContent="space-around" gap="20px">
-                <a href="#"><Image width="180px" height="40px" src="https://www.shine.com/next/static/images/shine-logo.png" /></a>
+                <Button colorScheme="white"><NavLink to="/"><Image width="180px" height="40px" src="https://www.shine.com/next/static/images/shine-logo.png" /></NavLink></Button>
                   <Input placeholder="Job,Title,Skills" />
                   <Input placeholder="Location" />
                   <Input placeholder="Experience" />
@@ -97,7 +103,7 @@ export function SearchSection() {
 
                 <ModalFooter>
 
-                  <Button  colorScheme="blue" color="white" fontWeight="bold">Search Jobs</Button>
+                  <Button  colorScheme="blue" color="white" fontWeight="bold"><NavLink to="/details">Search Job</NavLink></Button>
                   <Button  colorScheme="white" color="blue" fontWeight="bold">Advance Search</Button>
                 </ModalFooter>
               </ModalContent>
@@ -157,11 +163,31 @@ export function SearchSection() {
       <br />
       <Box><Categories /></Box>
       <br />
-      <Box>
-        <Image width="1440px" src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fc%2Fs1%2Fimages%2Fcandidate%2Fbanner%2Fhackathon-new-d-yellow.png&w=1920&q=75" />
-      </Box>
+      <Swiper
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    className="external-buttons"
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}>
+                    <SwiperSlide>
+        <Image width="100%" src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fc%2Fs1%2Fimages%2Fcandidate%2Fbanner%2Fhackathon-new-d-yellow.png&w=1920&q=75" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <Image width="100%" src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fc%2Fs1%2Fimages%2Fcandidate%2Fbanner%2FDesktop-Banner-changes.png&w=1920&q=75" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <Image width="100%" height="322px" src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fc%2Fs1%2Fimages%2Fcandidate%2Fbanner%2Fwinter_m_home.png&w=3840&q=75" />
+        </SwiperSlide>
+        <SwiperSlide>
+        <Image width="100%" src="https://www.shine.com/_next/image?url=https%3A%2F%2Fstatic1.shine.com%2Fc%2Fs1%2Fimages%2Fcandidate%2Fbanner%2FDesktop-Banner-changes.png&w=1920&q=75" />
+        </SwiperSlide>
+      </Swiper>
       <br /><br />
-      <Container><Image src="" /></Container>
+      
       <Box><Early /></Box>
     </>
 

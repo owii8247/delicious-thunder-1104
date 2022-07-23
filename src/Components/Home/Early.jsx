@@ -1,6 +1,19 @@
 import { Box, Container, Text, Button, Heading, Image } from "@chakra-ui/react"
 import { ArrowLeftIcon } from "@chakra-ui/icons"
+import { NavLink, useNavigate } from "react-router-dom"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
+
+
+
+
+
 function Early() {
+
+
     return (
         <>
             <Container display="flex" justifyContent="space-evenly" gap="50px">
@@ -32,72 +45,159 @@ function Early() {
                 </Box>
 
             </Container>
+
             <br />
             <Heading>Be An Early Applicant</Heading>
             <br />
 
             <Container display="flex" justifyContent="space-evenly" gap="50px" padding="10px" maxW='1080px' >
+                <Swiper
+                    spaceBetween={0}
+                    slidesPerView={3}
+                    className="external-buttons"
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}>
+                    <SwiperSlide>
+                        <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                        <Box display="flex" justifyContent="space-between">
+                            <Text>Premium</Text>
+                            <Text>1 day ago</Text>
+                        </Box>
+                        <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Developer - OTC</Text></Box>
+                        <Text display="flex" justifyContent="start">- Genpact India Pvt Ltd</Text>
+                        <Box display="flex" justifyContent="start" gap="20px">
+                            <Box>📍 Noida</Box>
+                            <Box>🧰2 to 4 Yrs</Box>
+                        </Box>
+                        <Box textAlign="start">
+                            <Box>▣ Be an Early Applicant</Box>
+                            <Box>▣ Regular</Box>
+                        </Box>
+                        <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
-                <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
-                    <Box display="flex" justifyContent="space-between">
-                        <Text>Premium</Text>
-                        <Text>1 day ago</Text>
                     </Box>
-                    <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Developer - OTC</Text></Box>
-                    <Text display="flex" justifyContent="start">- Genpact India Pvt Ltd</Text>
-                    <Box display="flex" justifyContent="start" gap="20px">
-                        <Box>📍 Noida</Box>
-                        <Box>🧰2 to 4 Yrs</Box>
-                    </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
-                        <Box>▣ Be an Early Applicant</Box>
-                        <Box>▣ Regular</Box>
-                    </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                            <Box display="flex" justifyContent="space-between">
+                                <Text>Hot</Text>
+                                <Text>1 day ago</Text>
+                            </Box>
+                            <Box><Text fontSize="xl" fontWeight="bold">Wanted Fresher Candidate for Data Entry</Text></Box>
+                            <Text display="flex" justifyContent="start">- Fondstaff Private Limited</Text>
+                            <Box display="flex" justifyContent="start" gap="20px">
+                                <Box>📍 Vadodra</Box>
+                                <Box>🧰 0 Yrs</Box>
+                            </Box>
+                            <Box textAlign="start">
+                                <Box>▣ Be an Early Applicant</Box>
+                                <Box>▣ Regular</Box>
+                            </Box>
+                            <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
-                </Box>
-                <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
-                    <Box display="flex" justifyContent="space-between">
-                        <Text>Hot</Text>
-                        <Text>1 day ago</Text>
-                    </Box>
-                    <Box><Text fontSize="xl" fontWeight="bold">Wanted Fresher Candidate for Data Entry Operator</Text></Box>
-                    <Text display="flex" justifyContent="start">- Fondstaff Private Limited</Text>
-                    <Box display="flex" justifyContent="start" gap="20px">
-                        <Box>📍 Vadodra</Box>
-                        <Box>🧰 0 Yrs</Box>
-                    </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
-                        <Box>▣ Be an Early Applicant</Box>
-                        <Box>▣ Regular</Box>
-                    </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                        </Box>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                            <Box display="flex" justifyContent="space-between">
+                                <Text>Premium</Text>
+                                <Text>1 day ago</Text>
+                            </Box>
+                            <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Engineer - OTC</Text></Box>
+                            <Text display="flex" justifyContent="start">- Accenture Pvt Ltd</Text>
+                            <Box display="flex" justifyContent="start" gap="20px">
+                                <Box>📍 Banglore</Box>
+                                <Box>🧰2 to 4 Yrs</Box>
+                            </Box>
+                            <Box textAlign="start">
+                                <Box>▣ Be an Early Applicant</Box>
+                                <Box>▣ Regular</Box>
+                            </Box>
+                            <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
-                </Box>
-                <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
-                    <Box display="flex" justifyContent="space-between">
-                        <Text>Premium</Text>
-                        <Text>1 day ago</Text>
-                    </Box>
-                    <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Engineer - OTC</Text></Box>
-                    <Text display="flex" justifyContent="start">- Accenture Pvt Ltd</Text>
-                    <Box display="flex" justifyContent="start" gap="20px">
-                        <Box>📍 Banglore</Box>
-                        <Box>🧰2 to 4 Yrs</Box>
-                    </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
-                        <Box>▣ Be an Early Applicant</Box>
-                        <Box>▣ Regular</Box>
-                    </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                        </Box>
+                    </SwiperSlide>
+                    <SwiperSlide><Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                        <Box display="flex" justifyContent="space-between">
+                            <Text>Premium</Text>
+                            <Text>1 day ago</Text>
+                        </Box>
+                        <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Developer - OTC</Text></Box>
+                        <Text display="flex" justifyContent="start">- Genpact India Pvt Ltd</Text>
+                        <Box display="flex" justifyContent="start" gap="20px">
+                            <Box>📍 Noida</Box>
+                            <Box>🧰2 to 4 Yrs</Box>
+                        </Box>
+                        <Box textAlign="start">
+                            <Box>▣ Be an Early Applicant</Box>
+                            <Box>▣ Regular</Box>
+                        </Box>
+                        <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
-                </Box>
+                    </Box>
+                    </SwiperSlide>
+                    <SwiperSlide><Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                        <Box display="flex" justifyContent="space-between">
+                            <Text>Premium</Text>
+                            <Text>1 day ago</Text>
+                        </Box>
+                        <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Developer - OTC</Text></Box>
+                        <Text display="flex" justifyContent="start">- Genpact India Pvt Ltd</Text>
+                        <Box display="flex" justifyContent="start" gap="20px">
+                            <Box>📍 Noida</Box>
+                            <Box>🧰2 to 4 Yrs</Box>
+                        </Box>
+                        <Box textAlign="start">
+                            <Box>▣ Be an Early Applicant</Box>
+                            <Box>▣ Regular</Box>
+                        </Box>
+                        <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
+
+                    </Box>
+                    </SwiperSlide>
+                    <SwiperSlide><Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                        <Box display="flex" justifyContent="space-between">
+                            <Text>Premium</Text>
+                            <Text>1 day ago</Text>
+                        </Box>
+                        <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Developer - OTC</Text></Box>
+                        <Text display="flex" justifyContent="start">- Genpact India Pvt Ltd</Text>
+                        <Box display="flex" justifyContent="start" gap="20px">
+                            <Box>📍 Noida</Box>
+                            <Box>🧰2 to 4 Yrs</Box>
+                        </Box>
+                        <Box textAlign="start">
+                            <Box>▣ Be an Early Applicant</Box>
+                            <Box>▣ Regular</Box>
+                        </Box>
+                        <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
+
+                    </Box>
+                    </SwiperSlide>
+                </Swiper>
             </Container>
+            <Button colorScheme="white" color="blue" _hover={{ fontSize: "large" }}><NavLink to="/details">View All</NavLink></Button>
             <br />
+
             <br />
             <Heading>Remote Jobs</Heading>
             <br />
             <Container display="flex" justifyContent="space-evenly" gap="50px" padding="10px" maxW='1080px' >
+            <Swiper
+                    spaceBetween={0}
+                    slidesPerView={3}
+                    className="external-buttons"
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}>
+                    <SwiperSlide>
 
                 <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
                     <Box display="flex" justifyContent="space-between">
@@ -110,13 +210,15 @@ function Early() {
                         <Box>📍 Noida</Box>
                         <Box>🧰 2 to 4 Yrs</Box>
                     </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
+                    <Box textAlign="start">
                         <Box>▣ Be an Early Applicant</Box>
                         <Box>▣ Regular</Box>
                     </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
                 </Box>
+                </SwiperSlide>
+                <SwiperSlide>
                 <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Hot</Text>
@@ -128,13 +230,15 @@ function Early() {
                         <Box>📍 Hyderabad</Box>
                         <Box>🧰 5 to 7 Yrs</Box>
                     </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
+                    <Box textAlign="start">
                         <Box>▣ Be an Early Applicant</Box>
                         <Box>▣ Regular</Box>
                     </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
                 </Box>
+                </SwiperSlide>
+                <SwiperSlide>
                 <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Latest</Text>
@@ -146,20 +250,35 @@ function Early() {
                         <Box>📍 Banglore</Box>
                         <Box>🧰 2 to 4 Yrs</Box>
                     </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
+                    <Box textAlign="start">
                         <Box>▣ Be an Early Applicant</Box>
                         <Box>▣ Regular</Box>
                     </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
                 </Box>
+                </SwiperSlide>
+                </Swiper>
             </Container>
 
+            <Button colorScheme="white" color="blue" _hover={{ fontSize: "large" }}><NavLink to="/details">View All</NavLink></Button>
             <br />
+
             <br />
             <Heading>Walkin Jobs</Heading>
             <br />
             <Container display="flex" justifyContent="space-evenly" gap="50px" padding="10px" maxW='1080px' >
+            <Swiper
+                    spaceBetween={0}
+                    slidesPerView={3}
+                    className="external-buttons"
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    navigation={true}
+                    modules={[Navigation]}
+                    onSlideChange={() => console.log('slide change')}
+                    onSwiper={(swiper) => console.log(swiper)}>
+                    <SwiperSlide>
 
                 <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
                     <Box display="flex" justifyContent="space-between">
@@ -172,13 +291,15 @@ function Early() {
                         <Box>📍 Noida</Box>
                         <Box>🧰 0 Yrs</Box>
                     </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
+                    <Box textAlign="start">
                         <Box>▣ Be an Early Applicant</Box>
                         <Box>▣ Regular</Box>
                     </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
                 </Box>
+                </SwiperSlide>
+                <SwiperSlide>
                 <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Hot</Text>
@@ -190,13 +311,15 @@ function Early() {
                         <Box>📍 Hyderabad</Box>
                         <Box>🧰 1 to 2 Yrs</Box>
                     </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
+                    <Box textAlign="start">
                         <Box>▣ Be an Early Applicant</Box>
                         <Box>▣ Regular</Box>
                     </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
                 </Box>
+                </SwiperSlide>
+                <SwiperSlide>
                 <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Premium</Text>
@@ -208,17 +331,83 @@ function Early() {
                         <Box>📍 Chennai</Box>
                         <Box>🧰 2 to 4 Yrs</Box>
                     </Box>
-                    <Box display="flex" justifyContent="start" gap="20px">
+                    <Box textAlign="start">
                         <Box>▣ Be an Early Applicant</Box>
                         <Box>▣ Regular</Box>
                     </Box>
-                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" >Apply</Button></Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
 
                 </Box>
+                </SwiperSlide>
+                <SwiperSlide>
+
+                <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                    <Box display="flex" justifyContent="space-between">
+                        <Text>Latest</Text>
+                        <Text>1 day ago</Text>
+                    </Box>
+                    <Box><Text fontSize="xl" fontWeight="bold">Full Stack Front End Web Developer</Text></Box>
+                    <Text display="flex" justifyContent="start">- Genpact India Pvt Ltd</Text>
+                    <Box display="flex" justifyContent="start" gap="20px">
+                        <Box>📍 Noida</Box>
+                        <Box>🧰 0 Yrs</Box>
+                    </Box>
+                    <Box textAlign="start">
+                        <Box>▣ Be an Early Applicant</Box>
+                        <Box>▣ Regular</Box>
+                    </Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
+
+                </Box>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                    <Box display="flex" justifyContent="space-between">
+                        <Text>Hot</Text>
+                        <Text>1 day ago</Text>
+                    </Box>
+                    <Box><Text fontSize="xl" fontWeight="bold">Lead Vice SW Engineer - Stage - I</Text></Box>
+                    <Text display="flex" justifyContent="start">- MasterCard</Text>
+                    <Box display="flex" justifyContent="start" gap="20px">
+                        <Box>📍 Hyderabad</Box>
+                        <Box>🧰 1 to 2 Yrs</Box>
+                    </Box>
+                    <Box textAlign="start">
+                        <Box>▣ Be an Early Applicant</Box>
+                        <Box>▣ Regular</Box>
+                    </Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
+
+                </Box>
+                </SwiperSlide>
+                <SwiperSlide>
+                <Box border="0.1px solid lightgray" padding="5px" width="70%" _hover={{ border: "1px solid blue" }}>
+                    <Box display="flex" justifyContent="space-between">
+                        <Text>Premium</Text>
+                        <Text>1 day ago</Text>
+                    </Box>
+                    <Box><Text fontSize="xl" fontWeight="bold">Looking for Process- Engineer - OTC</Text></Box>
+                    <Text display="flex" justifyContent="start">- Accenture Pvt Ltd</Text>
+                    <Box display="flex" justifyContent="start" gap="20px">
+                        <Box>📍 Chennai</Box>
+                        <Box>🧰 2 to 4 Yrs</Box>
+                    </Box>
+                    <Box textAlign="start">
+                        <Box>▣ Be an Early Applicant</Box>
+                        <Box>▣ Regular</Box>
+                    </Box>
+                    <Box display="flex" justifyContent="end"><Button color="blue" colorScheme="white" ><NavLink to="/details">Apply</NavLink></Button></Box>
+
+                </Box>
+                </SwiperSlide>
+                </Swiper>
             </Container>
+            <Button colorScheme="white" color="blue" _hover={{ fontSize: "large" }}><NavLink to="/details">View All</NavLink></Button>
 
 
         </>
     )
 }
 export default Early
+
+

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Container, Image, Button, Box, Text, Input, Checkbox } from "@chakra-ui/react"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
-import { NavLink,useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { Form } from "react-bootstrap"
 import { PinInput, PinInputField, HStack, useToast } from '@chakra-ui/react'
 import { AuthContext } from '../../Context/AuthContext'
@@ -15,32 +15,32 @@ const Login = () => {
     const auth = useContext(AuthContext)
     const navigate = useNavigate()
     function handleChange(e) {
-        const{name, value} = e.target 
+        const { name, value } = e.target
         setFormState({
             ...formState,
-        [name]:value
-    })
+            [name]: value
+        })
 
     }
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("https://reqres.in/api/login",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
+        fetch("https://reqres.in/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(formState)
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        alert("Successfully Loged In");
-        console.log(res);
-        auth.handleLogin(res.token);
-        navigate("/");
-      })
-      .catch((err) => {});
-        
-        
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                alert("Successfully Loged In");
+                console.log(res);
+                auth.handleLogin(res.token);
+                navigate("/");
+            })
+            .catch((err) => { });
+
+
     }
     return (
         <>
@@ -72,16 +72,16 @@ const Login = () => {
                         <br /><br />
 
                         <Button
-                         onClick={() =>
-                            toast({
-                              title: 'Account Loged In.',
-                              description: "We've Loged Into your account.",
-                              status: 'success',
-                              duration: 5000,
-                              isClosable: true,
-                            })
-                          }
-                        rightIcon={<ArrowForwardIcon />} fontWeight="bold" colorScheme="purple" color="white" width="100%" type="submit" >Log In</Button>
+                            onClick={() =>
+                                toast({
+                                    title: 'Account Loged In.',
+                                    description: "We've Loged Into your account.",
+                                    status: 'success',
+                                    duration: 5000,
+                                    isClosable: true,
+                                })
+                            }
+                            rightIcon={<ArrowForwardIcon />} fontWeight="bold" colorScheme="purple" color="white" width="100%" type="submit" >Log In</Button>
                         <Text color="gray" fontSize="md" fontWeight="bold">Or</Text>
                         <Button rightIcon={<ArrowForwardIcon />} fontWeight="bold" colorScheme="white" color="purple" variant="outline" width="100%" type="submit" ><NavLink to="/login">Log In With OTP</NavLink></Button>
                         <br /><br />
@@ -95,16 +95,16 @@ const Login = () => {
                         </HStack>
                         <br />
                         <Button
-                              onClick={() =>
+                            onClick={() =>
                                 toast({
-                                  title: 'Account Loged In.',
-                                  description: "We've Loged Into your account.",
-                                  status: 'success',
-                                  duration: 5000,
-                                  isClosable: true,
+                                    title: 'Account Loged In.',
+                                    description: "We've Loged Into your account.",
+                                    status: 'success',
+                                    duration: 5000,
+                                    isClosable: true,
                                 })
-                              }
-                        rightIcon={<ArrowForwardIcon />} fontWeight="bold" colorScheme="purple" color="white" width="100%" type="submit" >Submit</Button>   
+                            }
+                            rightIcon={<ArrowForwardIcon />} fontWeight="bold" colorScheme="purple" color="white" width="100%" type="submit" >Submit</Button>
                     </Form>
                     <br />
                     <Text color="gray" fontSize="md" fontWeight="bold">Or</Text>
@@ -132,9 +132,9 @@ const Login = () => {
                     <br />
                     <Text fontSize="xs" maxW="60%" margin="auto" >Fill in your profile details and let our unique matching technology.</Text>
                     <br />
-                    <Text fontSize="xs" maxW="60%" margin="auto" >You choose which recruiters see your personal and contact detail</Text>          
+                    <Text fontSize="xs" maxW="60%" margin="auto" >You choose which recruiters see your personal and contact detail</Text>
                     <br />
-                    <Text fontSize="xs" maxW="60%" margin="auto" >Research industries and employ our career services to be better</Text>          
+                    <Text fontSize="xs" maxW="60%" margin="auto" >Research industries and employ our career services to be better</Text>
                 </Box>
 
             </Container>
